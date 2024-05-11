@@ -11,3 +11,9 @@ export async function doSignIn (){
   await signIn()
   
 }
+
+
+export  async function auth (formData){
+
+
+}

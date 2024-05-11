@@ -5,6 +5,9 @@ import mongoClientPromise from "./lib/mongoClinetPromise";
 
 export const { handlers :{GET , POST}, signIn, signOut, auth } = NextAuth({
   adapter: MongoDBAdapter(mongoClientPromise , {databaseName : process.env.ENVIRONMENT}),
+  session: {
+    strategy: "jwt"
+  },
   providers: [
     GoogleProvider(
       {
